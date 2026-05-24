@@ -1,0 +1,139 @@
+.aboutSection {
+  min-height: 100vh;
+  padding: 4rem 6vw;
+  background: #030303;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.leftCol {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.profileImage {
+  object-fit: cover;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  inset: -10%;
+  background: radial-gradient(circle at center, rgba(255, 160, 60, 0.2) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.bio {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 3rem;
+}
+
+.subHeading {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 160, 60, 0.9);
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timelineTrack {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(255,255,255,0.1);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.dot {
+  position: absolute;
+  left: -2.35rem;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 160, 60, 0.9);
+  box-shadow: 0 0 10px rgba(255, 160, 60, 0.5);
+}
+
+.content h4 {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+}
+
+.content p {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 0.5rem 0;
+}
+
+.content span {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .imageWrapper {
+    margin-bottom: 2rem;
+  }
+}

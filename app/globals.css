@@ -1,0 +1,54 @@
+/* ─── globals.css ─────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --color-bg: #030303;
+  --color-text: #fff;
+  --color-accent: #ff9a35;
+  --color-accent-dim: rgba(255, 154, 53, 0.6);
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 154, 53, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 154, 53, 0.6); }
+
+/* Selection */
+::selection {
+  background: rgba(255, 154, 53, 0.25);
+  color: #fff;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid rgba(255, 154, 53, 0.6);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

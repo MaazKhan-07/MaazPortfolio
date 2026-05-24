@@ -1,0 +1,154 @@
+.footer {
+  background: #030303;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3rem 6vw 1.5rem;
+  color: #fff;
+}
+
+/* ── Top Row ─────────────────────────────── */
+.top {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tagline {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+}
+
+/* ── Nav Column ──────────────────────────── */
+.nav ul {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colHeading {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.25s ease;
+  text-align: left;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* ── Socials Column ──────────────────────── */
+.socialsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.socialsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.socialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.25s, border-color 0.3s;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 160, 60, 0.15);
+  border-color: rgba(255, 160, 60, 0.5);
+  color: rgba(255, 160, 60, 0.9);
+  transform: translateY(-3px);
+}
+
+.socialIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.socialIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Divider ─────────────────────────────── */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Bottom Bar ──────────────────────────── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bottom p {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.built {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

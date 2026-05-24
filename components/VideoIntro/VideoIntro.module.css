@@ -1,0 +1,370 @@
+/* ─── VideoIntro.module.css ───────────────────────────────────────────────── */
+
+/* ── Hero Shell ─────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #030303;
+}
+
+/* ── Ambient Blurred BG Video ───────────────────────────────────────────── */
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Cinematic Gradient Overlays ────────────────────────────────────────── */
+.gradientTop {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(3,3,3,0.95) 0%,
+    rgba(3,3,3,0.55) 55%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(
+    0deg,
+    rgba(3,3,3,0.98) 0%,
+    rgba(3,3,3,0.65) 45%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gradientLeft {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(3,3,3,0.82) 0%,
+    rgba(3,3,3,0.4) 35%,
+    transparent 60%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 60% 50%,
+    transparent 35%,
+    rgba(3,3,3,0.55) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Foreground Video ───────────────────────────────────────────────────── */
+.fgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.fgGlow {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 45%;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(255, 145, 45, 0.16) 0%,
+    rgba(30, 85, 180, 0.07) 55%,
+    transparent 80%
+  );
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+/* ── Portfolio Content ──────────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 0 6vw;
+  max-width: 860px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.tagline {
+  display: block;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: clamp(0.58rem, 1.05vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 160, 60, 0.82);
+  margin-bottom: 1.6rem;
+  opacity: 0;
+}
+
+/* Name block rows — each is a clip-path reveal container */
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.nameRow {
+  overflow: hidden;
+  line-height: 0.9;
+  opacity: 0;
+}
+
+.firstName {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
+  font-size: clamp(4.8rem, 11.5vw, 11rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin: 0;
+  text-shadow:
+    0 0 100px rgba(255,145,45,0.2),
+    0 6px 50px rgba(0,0,0,0.7);
+}
+
+.lastName {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
+  font-size: clamp(4.8rem, 11.5vw, 11rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: transparent;
+  -webkit-text-stroke: 1.8px rgba(255,255,255,0.72);
+  margin: 0;
+  padding-left: 0.08em;
+}
+
+.role {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: clamp(0.68rem, 1.15vw, 0.88rem);
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.42);
+  margin: 0;
+  opacity: 0;
+  line-height: 1.7;
+}
+
+/* ── Glassmorphism Controls ─────────────────────────────────────────────── */
+.controls {
+  position: absolute;
+  bottom: 2.8rem;
+  right: 3rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.7rem;
+  opacity: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.065);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.82);
+  cursor: pointer;
+  transition:
+    background 0.28s ease,
+    border-color 0.28s ease,
+    transform 0.2s ease,
+    color 0.28s ease;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,160,60,0.48);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ── Sound Hint Badge ───────────────────────────────────────────────────── */
+.hint {
+  position: absolute;
+  top: 2.4rem;
+  right: 3rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 1.05rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.055);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.58);
+  pointer-events: none;
+  animation: hintIn 0.8s ease forwards;
+}
+
+@keyframes hintIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hintDot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255,160,60,0.9);
+  animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.6); opacity: 0.45; }
+}
+
+/* ── Scroll Indicator ───────────────────────────────────────────────────── */
+.scroll {
+  position: absolute;
+  bottom: 2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.52rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll:hover .scrollLabel {
+  color: rgba(255,160,60,0.88);
+}
+
+.scrollLabel {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  transition: color 0.3s ease;
+}
+
+.scrollTrack {
+  width: 1px;
+  height: 58px;
+  background: rgba(255,255,255,0.12);
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.scrollBar {
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255,160,60,0.85) 50%,
+    transparent 100%
+  );
+  border-radius: 999px;
+  animation: scrollDrop 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollDrop {
+  0%   { top: -60%; opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { top: 160%; opacity: 0; }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .content { padding: 0 5vw; }
+
+  .firstName,
+  .lastName {
+    font-size: clamp(3.5rem, 15vw, 6.5rem);
+  }
+
+  .lastName {
+    -webkit-text-stroke: 1.2px rgba(255,255,255,0.72);
+  }
+
+  .controls {
+    bottom: 5.5rem;
+    right: 1.4rem;
+  }
+
+  .hint {
+    top: 1.5rem;
+    right: 1.4rem;
+  }
+
+  .scroll {
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .firstName,
+  .lastName {
+    font-size: clamp(2.8rem, 17vw, 4.8rem);
+  }
+
+  .tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+  }
+
+  .role {
+    font-size: 0.64rem;
+  }
+}
