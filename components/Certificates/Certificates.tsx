@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const certs = [
   {
-    src: '/images/cert1.png',
-    title: 'Solutions Architecture Job Simulation',
-    issuer: 'AWS × Forage',
+    src: '/images/cert5.png',
+    title: 'Software Engineering Job Simulation',
+    issuer: 'JPMorgan Chase × Forage',
     date: 'October 2025',
   },
   {
@@ -33,10 +33,22 @@ const certs = [
     date: 'November 2025',
   },
   {
-    src: '/images/cert5.png',
-    title: 'Software Engineering Job Simulation',
-    issuer: 'JPMorgan Chase × Forage',
+    src: '/images/cert1.png',
+    title: 'Solutions Architecture Job Simulation',
+    issuer: 'AWS × Forage',
     date: 'October 2025',
+  },
+  {
+    src: '/images/microsoftandlinkedin.png',
+    title: 'Career Essentials in Generative Ai',
+    issuer: 'MICROSOFT × LINKEDIN LEARNING',
+    date: 'September 2025',
+  },
+  {
+    src: '/images/cert6.png',
+    title: 'Software Engineering Job Simulation',
+    issuer: 'WELLS FARGO × Forage',
+    date: 'Decenber 2025',
   },
 ];
 

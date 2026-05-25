@@ -1,31 +1,77 @@
 .servicesSection {
   min-height: 80vh;
-  padding: 4rem 6vw;
+  padding: 4rem 0; /* Remove horizontal padding so marquee touches edges */
   background: #0a0a0a;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .heading {
   font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   color: #fff;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.marqueeWrapper {
   width: 100%;
-  max-width: 1200px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Gradient fade on edges */
+.marqueeWrapper::before,
+.marqueeWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);
+}
+
+.marqueeWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0a0a0a 0%, transparent 100%);
+}
+
+.marqueeContent {
+  display: flex;
+  gap: 2rem;
+  padding-left: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly half of the content's total width plus half the gap width */
+    transform: translateX(calc(-50% - 1rem));
+  }
 }
 
 .card {
   position: relative;
+  width: 350px;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
@@ -33,6 +79,8 @@
   overflow: hidden;
   transition: transform 0.3s ease, background 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {

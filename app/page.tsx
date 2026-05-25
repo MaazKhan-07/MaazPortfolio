@@ -17,8 +17,8 @@ export default function Home() {
       <Navbar />
       <About />
       <Services />
-      <TechStack />
       <Projects />
+      <TechStack />
       <Certificates />
       <Contact />
       <Footer />

@@ -4,20 +4,22 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Services.module.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        gsap.utils.toArray(`.${styles.card}`),
-        { opacity: 0, y: 50 },
+        wrapperRef.current,
+        { opacity: 0, y: 30 },
         {
-          opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out',
+          opacity: 1, y: 0, duration: 1, ease: 'power2.out',
           scrollTrigger: {
-            trigger: cardsRef.current,
-            start: 'top 80%',
+            trigger: sectionRef.current,
+            start: 'top 75%',
           }
         }
       );
@@ -36,14 +38,17 @@ export default function Services() {
   return (
     <section id="services" ref={sectionRef} className={styles.servicesSection}>
       <h2 className={styles.heading}>Services</h2>
-      <div ref={cardsRef} className={styles.grid}>
-        {services.map((svc, i) => (
-          <div key={i} className={styles.card}>
-            <div className={styles.glow} />
-            <h3>{svc.title}</h3>
-            <p>{svc.desc}</p>
-          </div>
-        ))}
+      <div ref={wrapperRef} className={styles.marqueeWrapper}>
+        <div className={styles.marqueeContent}>
+          {/* Render array twice for a seamless infinite scroll loop */}
+          {[...services, ...services].map((svc, i) => (
+            <div key={i} className={styles.card}>
+              <div className={styles.glow} />
+              <h3>{svc.title}</h3>
+              <p>{svc.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

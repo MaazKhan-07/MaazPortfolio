@@ -20,34 +20,35 @@ export interface Project {
 const projects: Project[] = [
   {
     num: '01',
-    title: 'Project Title One',
+    title: 'First Portfolio',
     category: 'Web Development',
     description:
-      'A short description of this project goes here. What problem it solved and how you built it.',
-    thumbnail: '/images/profile.jpg', // replace with your own thumbnail
-    url: 'https://example.com',
-    tags: ['React', 'Next.js', 'GSAP'],
+      'This was my first portfolio project, built to showcase my skills and projects. It features a clean design, smooth animations, and responsive layout.',
+    thumbnail: '/images/proj1.png', // replace with your own thumbnail
+    url: 'https://maazkportfolio.netlify.app',
+    tags: ['Html', 'CSS', 'Javascript'],
   },
   {
     num: '02',
-    title: 'Project Title Two',
-    category: 'UI/UX Design',
+    title: 'InfoShield',
+    category: 'Web Development',
     description:
-      'A short description of this project goes here. What problem it solved and how you built it.',
-    thumbnail: '/images/profile.jpg', // replace with your own thumbnail
-    url: 'https://example.com',
-    tags: ['Figma', 'Framer', 'Motion'],
+      'This project is created during my first hackathon, InfoShield detects the misinformation amd verifies it and show real information',
+    thumbnail: '/images/proj3.png', // replace with your own thumbnail
+    url: 'https://factline1.netlify.app',
+    tags: ['REACT', 'CSS', 'Firebase'],
   },
   {
     num: '03',
-    title: 'Project Title Three',
-    category: 'Android Development',
+    title: 'Practice',
+    category: 'UI/UX Design',
     description:
-      'A short description of this project goes here. What problem it solved and how you built it.',
-    thumbnail: '/images/profile.jpg', // replace with your own thumbnail
-    url: 'https://example.com',
-    tags: ['Kotlin', 'Jetpack Compose', 'Firebase'],
+      'A design and prototype of a page on pintrest, created to practice UI/UX principles and tools.',
+    thumbnail: '/images/proj4.png', // replace with your own thumbnail
+    url: 'https://amazonclonepractice.netlify.app',
+    tags: ['FIGMA', 'REACT', 'TAILWIND-CSS'],
   },
+
 ];
 
 export default function Projects() {
