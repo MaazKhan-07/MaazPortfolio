@@ -71,48 +71,55 @@ export default function Contact() {
       <h2 className={styles.heading}>Get in Touch</h2>
       <p className={styles.subText}>Have a project in mind or just want to say hi? I'd love to hear from you.</p>
 
-      <form ref={formRef} className={styles.form} onSubmit={(e) => e.preventDefault()}>
-        <div className={styles.inputGroup}>
-          <input type="text" placeholder="Your Name" required className={styles.input} />
+      <div className={styles.contentWrapper}>
+        <div className={styles.leftCol}>
+          <form ref={formRef} className={styles.form} onSubmit={(e) => e.preventDefault()}>
+            <div className={styles.inputGroup}>
+              <input type="text" placeholder="Your Name" required className={styles.input} />
+            </div>
+            <div className={styles.inputGroup}>
+              <input type="email" placeholder="Your Email" required className={styles.input} />
+            </div>
+            <div className={styles.inputGroup}>
+              <textarea placeholder="Your Message" rows={4} required className={styles.textarea} />
+            </div>
+            <button type="submit" className={styles.submitBtn}>Send Message</button>
+          </form>
         </div>
-        <div className={styles.inputGroup}>
-          <input type="email" placeholder="Your Email" required className={styles.input} />
-        </div>
-        <div className={styles.inputGroup}>
-          <textarea placeholder="Your Message" rows={4} required className={styles.textarea} />
-        </div>
-        <button type="submit" className={styles.submitBtn}>Send Message</button>
-      </form>
 
-      {/* Social + Resume */}
-      <div ref={socialsRef} className={styles.socialsRow}>
-        {socials.map((s) => (
-          <a
-            key={s.name}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialBtn}
-            aria-label={s.name}
-            title={s.name}
-            style={{ '--accent': s.color } as React.CSSProperties}
-          >
-            <span
-              className={styles.socialIcon}
-              dangerouslySetInnerHTML={{ __html: s.icon }}
-            />
+        {/* Social + Resume */}
+        <div className={styles.rightCol} ref={socialsRef}>
+          <h3 className={styles.rightHeading}>Connect with me on social media</h3>
+          <div className={styles.socialsRow}>
+            {socials.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialBtn}
+                aria-label={s.name}
+                title={s.name}
+                style={{ '--accent': s.color } as React.CSSProperties}
+              >
+                <span
+                  className={styles.socialIcon}
+                  dangerouslySetInnerHTML={{ __html: s.icon }}
+                />
+              </a>
+            ))}
+          </div>
+
+          <a href="/resume.pdf" download className={styles.resumeBtn}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Resume
           </a>
-        ))}
+        </div>
       </div>
-
-      <a href="/resume.pdf" download className={styles.resumeBtn}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download Resume
-      </a>
     </section>
   );
 }

@@ -25,6 +25,51 @@
   max-width: 500px;
 }
 
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: 4rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.leftCol {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rightCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.rightHeading {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', serif);
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-accent, #ff9a35);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .leftCol, .rightCol {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .form {
   width: 100%;
   max-width: 580px;
@@ -80,7 +125,6 @@
 .socialsRow {
   display: flex;
   gap: 1rem;
-  margin-top: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -121,7 +165,6 @@
 
 /* ── Resume Button ───────────────────────── */
 .resumeBtn {
-  margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
