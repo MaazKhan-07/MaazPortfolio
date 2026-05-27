@@ -92,6 +92,40 @@
   flex: 1;
 }
 
+.links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.githubBtn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.githubBtn:hover {
+  background: rgba(255, 160, 60, 0.15);
+  border-color: rgba(255, 160, 60, 0.5);
+  color: rgba(255, 160, 60, 0.9);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.githubBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
 .arrowBtn {
   flex-shrink: 0;
   width: 48px;
@@ -105,7 +139,6 @@
   color: #fff;
   text-decoration: none;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  margin-top: 6px;
 }
 
 .arrowBtn:hover {

@@ -4,8 +4,10 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100svh;
+  height: 100vh;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -16,10 +18,12 @@
 /* ── Ambient Blurred BG Video ───────────────────────────────────────────── */
 .bgVideo {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.05);
   z-index: 0;
   pointer-events: none;
 }
@@ -27,28 +31,28 @@
 /* ── Cinematic Gradient Overlays ────────────────────────────────────────── */
 .gradientTop {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 50%;
-  background: linear-gradient(
-    180deg,
-    rgba(3,3,3,0.95) 0%,
-    rgba(3,3,3,0.55) 55%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(3, 3, 3, 0.95) 0%,
+      rgba(3, 3, 3, 0.55) 55%,
+      transparent 100%);
   z-index: 2;
   pointer-events: none;
 }
 
 .gradientBottom {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 60%;
-  background: linear-gradient(
-    0deg,
-    rgba(3,3,3,0.98) 0%,
-    rgba(3,3,3,0.65) 45%,
-    transparent 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(3, 3, 3, 0.98) 0%,
+      rgba(3, 3, 3, 0.65) 45%,
+      transparent 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -56,12 +60,10 @@
 .gradientLeft {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(3,3,3,0.82) 0%,
-    rgba(3,3,3,0.4) 35%,
-    transparent 60%
-  );
+  background: linear-gradient(90deg,
+      rgba(3, 3, 3, 0.82) 0%,
+      rgba(3, 3, 3, 0.4) 35%,
+      transparent 60%);
   z-index: 2;
   pointer-events: none;
 }
@@ -69,11 +71,9 @@
 .vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 60% 50%,
-    transparent 35%,
-    rgba(3,3,3,0.55) 100%
-  );
+  background: radial-gradient(ellipse at 60% 50%,
+      transparent 35%,
+      rgba(3, 3, 3, 0.55) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -99,12 +99,10 @@
   transform: translateX(-50%);
   width: 65%;
   height: 45%;
-  background: radial-gradient(
-    ellipse at center bottom,
-    rgba(255, 145, 45, 0.16) 0%,
-    rgba(30, 85, 180, 0.07) 55%,
-    transparent 80%
-  );
+  background: radial-gradient(ellipse at center bottom,
+      rgba(255, 145, 45, 0.16) 0%,
+      rgba(30, 85, 180, 0.07) 55%,
+      transparent 80%);
   filter: blur(36px);
   pointer-events: none;
 }
@@ -152,8 +150,8 @@
   color: #fff;
   margin: 0;
   text-shadow:
-    0 0 100px rgba(255,145,45,0.2),
-    0 6px 50px rgba(0,0,0,0.7);
+    0 0 100px rgba(255, 145, 45, 0.2),
+    0 6px 50px rgba(0, 0, 0, 0.7);
 }
 
 .lastName {
@@ -162,7 +160,7 @@
   font-weight: 700;
   letter-spacing: -0.025em;
   color: transparent;
-  -webkit-text-stroke: 1.8px rgba(255,255,255,0.72);
+  -webkit-text-stroke: 1.8px rgba(255, 255, 255, 0.72);
   margin: 0;
   padding-left: 0.08em;
 }
@@ -172,7 +170,7 @@
   font-size: clamp(0.68rem, 1.15vw, 0.88rem);
   font-weight: 400;
   letter-spacing: 0.07em;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.42);
   margin: 0;
   opacity: 0;
   line-height: 1.7;
@@ -196,11 +194,11 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.065);
+  background: rgba(255, 255, 255, 0.065);
   backdrop-filter: blur(18px) saturate(1.6);
   -webkit-backdrop-filter: blur(18px) saturate(1.6);
-  border: 1px solid rgba(255,255,255,0.13);
-  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.82);
   cursor: pointer;
   transition:
     background 0.28s ease,
@@ -210,8 +208,8 @@
 }
 
 .btn:hover {
-  background: rgba(255,255,255,0.13);
-  border-color: rgba(255,160,60,0.48);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 160, 60, 0.48);
   color: #fff;
   transform: scale(1.1);
 }
@@ -231,22 +229,29 @@
   gap: 0.55rem;
   padding: 0.42rem 1.05rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.055);
+  background: rgba(255, 255, 255, 0.055);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-inter, 'Inter', sans-serif);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.58);
+  color: rgba(255, 255, 255, 0.58);
   pointer-events: none;
   animation: hintIn 0.8s ease forwards;
 }
 
 @keyframes hintIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hintDot {
@@ -254,13 +259,22 @@
   height: 7px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(255,160,60,0.9);
+  background: rgba(255, 160, 60, 0.9);
   animation: dotPulse 1.8s ease-in-out infinite;
 }
 
 @keyframes dotPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.6); opacity: 0.45; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.45;
+  }
 }
 
 /* ── Scroll Indicator ───────────────────────────────────────────────────── */
@@ -280,7 +294,7 @@
 }
 
 .scroll:hover .scrollLabel {
-  color: rgba(255,160,60,0.88);
+  color: rgba(255, 160, 60, 0.88);
 }
 
 .scrollLabel {
@@ -289,14 +303,14 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   transition: color 0.3s ease;
 }
 
 .scrollTrack {
   width: 1px;
   height: 58px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   position: relative;
   overflow: hidden;
   border-radius: 999px;
@@ -308,34 +322,62 @@
   left: 0;
   width: 100%;
   height: 55%;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255,160,60,0.85) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255, 160, 60, 0.85) 50%,
+      transparent 100%);
   border-radius: 999px;
   animation: scrollDrop 2.2s ease-in-out infinite;
 }
 
 @keyframes scrollDrop {
-  0%   { top: -60%; opacity: 0; }
-  15%  { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { top: 160%; opacity: 0; }
+  0% {
+    top: -60%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 160%;
+    opacity: 0;
+  }
 }
 
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .content { padding: 0 5vw; }
+  .hero {
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 7vh;
+  }
+
+  .content {
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nameBlock {
+    align-items: center;
+  }
 
   .firstName,
   .lastName {
     font-size: clamp(3.5rem, 15vw, 6.5rem);
+    text-align: center;
   }
 
   .lastName {
-    -webkit-text-stroke: 1.2px rgba(255,255,255,0.72);
+    -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.72);
   }
 
   .controls {
@@ -354,6 +396,7 @@
 }
 
 @media (max-width: 480px) {
+
   .firstName,
   .lastName {
     font-size: clamp(2.8rem, 17vw, 4.8rem);
