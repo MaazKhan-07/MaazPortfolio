@@ -60,7 +60,7 @@ export default function About() {
         <div ref={leftRef} className={styles.leftCol}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile1.jpeg"
               alt="Maaz Portrait"
               fill
               className={styles.profileImage}
@@ -68,13 +68,13 @@ export default function About() {
             <div className={styles.glow} />
           </div>
         </div>
-        
+
         <div ref={rightRef} className={styles.rightCol}>
           <h2 className={styles.heading}>About Me</h2>
           <p className={styles.bio}>
             I am a passionate Full-Stack Engineer and Creative Developer. I specialize in building immersive, highly interactive web experiences using cutting-edge technologies. My goal is to merge technical excellence with stunning design, creating products that leave a lasting impact. I love turning complex problems into elegant, user-friendly solutions.
           </p>
-          
+
           <div ref={timelineRef} className={styles.timeline}>
             <h3 className={styles.subHeading}>Education</h3>
             <div className={styles.timelineTrack}>

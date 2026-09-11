@@ -50,6 +50,24 @@ const certs = [
     issuer: 'WELLS FARGO × Forage',
     date: 'Decenber 2025',
   },
+  {
+    src: '/images/cert7.jpeg',
+    title: 'Build and Grow AI Hackathon 2.0',
+    issuer: 'GDG Cloud Mumbai',
+    date: 'January 2026',
+  },
+  {
+    src: '/images/cert8.jpeg',
+    title: '2nd RunnerUp at Startup & Innovation Pitch Day',
+    issuer: 'Institutes Innovation Council and R&D Cell of NHITM',
+    date: 'January 2026',
+  },
+  {
+    src: '/images/cert9.jpeg',
+    title: 'Under Top 100 Leaderboard for Challenge 1 during Google PromptWars Virtual',
+    issuer: 'Google For Developers & Hack2Skill',
+    date: 'August 2026',
+  },
 ];
 
 export default function Certificates() {

@@ -21,6 +21,17 @@ export interface Project {
 const projects: Project[] = [
   {
     num: '01',
+    title: 'KisanConnect',
+    category: 'Web Development',
+    description:
+      'This project is created for farmers to connect with buyers and also helps them to get the best price for their crops',
+    thumbnail: '/images/proj7.jpg', // replace with your own thumbnail
+    url: 'kisan-connect-mu.vercel.app',
+    githubUrl: 'https://github.com/MaazKhan-07/KisanConnect',
+    tags: ['Next.js', 'Tailwind-CSS', 'MySQL', 'Python', 'FastAPI'],
+  },
+  {
+    num: '02',
     title: 'InfoShield',
     category: 'Web Development',
     description:
@@ -31,7 +42,7 @@ const projects: Project[] = [
     tags: ['REACT', 'CSS', 'Firebase'],
   },
   {
-    num: '02',
+    num: '03',
     title: 'VitalityPro',
     category: 'Web Design & Development',
     description:
@@ -42,7 +53,7 @@ const projects: Project[] = [
     tags: ['FIGMA', 'REACT', 'TAILWIND-CSS'],
   },
   {
-    num: '03',
+    num: '04',
     title: 'First Portfolio',
     category: 'Web Development',
     description:
@@ -52,17 +63,7 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/MaazKhan-07',
     tags: ['Html', 'CSS', 'Javascript'],
   },
-  {
-    num: '04',
-    title: 'ResumeAnalyzer',
-    category: 'Web Design & Development',
-    description:
-      'ResumeAnalyzer is a tool that helps you analyze your resume and provides personalized feedback to improve it.',
-    thumbnail: '/images/proj6.png', // replace with your own thumbnail
-    url: 'https://resumeanalyzer2-585582599644.europe-west1.run.app',
-    githubUrl: 'https://github.com/MaazKhan-07/ResumeAnalyzer',
-    tags: ['REACT', 'TAIL-WINDCSS', 'Javascript'],
-  },
+
 
 ];
 
